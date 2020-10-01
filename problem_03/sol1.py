@@ -42,23 +42,23 @@ def solution(n):
     >>> solution([])
     Traceback (most recent call last):
         ...
-    TypeError: Parameter n must be int or passive of cast to int.
+    
     >>> solution("asd")
-    Traceback (most recent call last):
+   
         ...
-    TypeError: Parameter n must be int or passive of cast to int.
+    .
     """
     try:
         n = int(n)
     except (TypeError, ValueError) as e:
         raise TypeError("Parameter n must be int or passive of cast to int.")
     if n <= 0:
-        raise ValueError("Parameter n must be greater or equal to one.")
+        raise ValueError("Parameter n must be greater or equal to one in all cases.")
     maxNumber = 0
     if isprime(n):
         return n
     else:
-        while n % 2 == 0:
+        while (n % 2) == 0:
             n = n / 2
         if isprime(n):
             return int(n)
